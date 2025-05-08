@@ -13,5 +13,10 @@ namespace SystemIOCompression
                 File.Delete(destinationZipFile);
             ZipFile.CreateFromDirectory(sourceDirectory, destinationZipFile);
         }
+
+        public void CompressDirectoryWithPassword(string sourceDirectory, string destinationZipFile, string password)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

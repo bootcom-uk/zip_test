@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemIOCompression", "Inte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpZip", "Integrations\SharpZipLib\SharpZip.csproj", "{E1F13E35-F341-4A00-99DE-01F776B3C887}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetZip", "Integrations\DotNetZip\DotNetZip.csproj", "{BAE94815-22FA-4047-B93E-2C781257064C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetZipLib", "Integrations\DotNetZip\DotNetZipLib.csproj", "{BAE94815-22FA-4047-B93E-2C781257064C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -15,5 +15,12 @@ namespace DotNetZip
             zip.Save(destinationZipFile);
         }
 
+        public void CompressDirectoryWithPassword(string sourceDirectory, string destinationZipFile, string password)
+        {
+            using var zip = new ZipFile();
+            zip.Password = password;
+            zip.AddDirectory(sourceDirectory);
+            zip.Save(destinationZipFile);
+        }
     }
 }

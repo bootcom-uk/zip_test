@@ -50,13 +50,32 @@ foreach (var integration in integrations)
             sw.Start();
             instance.CompressDirectory(directoryToCompress, Path.Combine(directoryCompressionDirectory, $"{instance.Name}.zip"));
             sw.Stop();
-
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"{instance.Name} integration completed file compression in {sw.ElapsedMilliseconds / 1000} seconds");
+            sw.Reset();
+
+            
 
             Console.ForegroundColor = ConsoleColor.White;
 
-            sw.Reset();
+            Console.WriteLine($"Testing {instance.Name} integration with password protection");
+            sw.Start();
+            try
+            {
+                instance.CompressDirectoryWithPassword(directoryToCompress, Path.Combine(directoryCompressionDirectory, $"pp_{instance.Name}.zip"), "ChrisIsAwesome");
+                sw.Stop();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"{instance.Name} integration with password protection completed file compression in {sw.ElapsedMilliseconds / 1000} seconds");
+                sw.Reset();
+            }
+            catch (NotImplementedException ex) {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"{instance.Name} integration with password protection not supported");
+                sw.Stop();
+                sw.Reset();
+            }
+            
+            
 
         }
     }
